@@ -17,7 +17,9 @@ class Calculator:
 
 cal1 = Calculator()
 
-cal1.add(20,13)
-cal1.sub(20,13)
-cal1.mul(20,13)
-cal1.div(20,13)
+a,b = map(int, input().split())
+
+cal1.add(a,b)
+cal1.sub(a,b)
+cal1.mul(a,b)
+cal1.div(a,b)

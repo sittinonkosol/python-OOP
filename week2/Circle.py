@@ -3,8 +3,9 @@ class Circle:
         self.diameter = int(input('โปรดกรอกเส้นผ่าศูนย์กลาง : '))
 
     def cal_circle_ridius(self):
-        self.radius = self.diameter / 2
-        return self.radius
+        import math
+        self.circum = self.diameter * math.pi
+        return "{:.2f}".format(self.circum)
 
 cal = Circle()
 
