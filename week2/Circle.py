@@ -1,4 +1,4 @@
-class circle:
+class Circle:
     def user_input(self):
         self.diameter = int(input('โปรดกรอกเส้นผ่าศูนย์กลาง : '))
 
@@ -6,7 +6,7 @@ class circle:
         self.radius = self.diameter / 2
         return self.radius
 
-cal = circle()
+cal = Circle()
 
 cal.user_input()
 
