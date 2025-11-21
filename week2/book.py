@@ -26,4 +26,3 @@ class Book_keeper:
 
 lib = Book_keeper('How to how to?','pathara muhaha')
 lib.display()
-
