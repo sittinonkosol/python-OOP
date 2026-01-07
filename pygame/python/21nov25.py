@@ -28,7 +28,7 @@ class Calculator:
         return a / b
 
 class Smartphone:
-    # Class variable
+    # Class variabl
     manufacturer = "Unknown"
 
     def __init__(self, model, storage, battery):
