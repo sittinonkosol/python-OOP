@@ -8,36 +8,24 @@ class Calculator(QWidget):
 
     def init_ui(self):
         grid = QGridLayout()
-
-        grid.addWidget(QPushButton("Cls"), 0, 0)
-        grid.addWidget(QPushButton("7"), 1, 0)
-        grid.addWidget(QPushButton("4"), 2, 0)
-        grid.addWidget(QPushButton("1"), 3, 0)
-        grid.addWidget(QPushButton("0"), 4, 0)
-
-        grid.addWidget(QPushButton("Bck"), 0, 1)
-        grid.addWidget(QPushButton("8"), 1, 1)
-        grid.addWidget(QPushButton("5"), 2, 1)
-        grid.addWidget(QPushButton("2"), 3, 1)
-        grid.addWidget(QPushButton("."), 4, 1)
-
-        grid.addWidget(QPushButton("9"), 1, 2)
-        grid.addWidget(QPushButton("6"), 2, 2)
-        grid.addWidget(QPushButton("3"), 3, 2)
-        grid.addWidget(QPushButton("="), 4, 2)
-
         close_button = QPushButton("Close")
         close_button.clicked.connect(self.close)
-        grid.addWidget(close_button, 0, 3)
 
-        grid.addWidget(QPushButton("9"), 1, 3)
-        grid.addWidget(QPushButton("6"), 2, 3)
-        grid.addWidget(QPushButton("3"), 3, 3)
-        grid.addWidget(QPushButton("+"), 4, 3)
+        btn_map = [["Cls","Bck",None, close_button],
+                   ["7","8","9","/"],
+                   ["4","5","6","*"],
+                   ["1","2","3","-"],
+                   ["0",".","=","+"]]
+        
+        for row_i in range(len(btn_map)):
+            for col_i, cell_v in enumerate(btn_map[row_i]):
+                if isinstance(cell_v, QPushButton):
+                    grid.addWidget(cell_v, row_i, col_i)
+                elif cell_v is not None:
+                    grid.addWidget(QPushButton(cell_v), row_i, col_i)
 
         self.setLayout(grid)
-        self.setGeometry(100, 100, 200, 100)
-        self.setWindowTitle("Calculator")
+        self.setWindowTitle("Calculator I")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
